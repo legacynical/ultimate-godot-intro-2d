@@ -1,10 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://606ohcyd053q"]
+[gd_scene load_steps=4 format=3 uid="uid://606ohcyd053q"]
 
-[ext_resource type="Texture2D" uid="uid://hf5dvcma73kt" path="res://graphics/player/player.png" id="1_3qqxn"]
+[ext_resource type="Texture2D" uid="uid://hf5dvcma73kt" path="res://graphics/player/player.png" id="1_hxnwr"]
+[ext_resource type="Texture2D" uid="uid://dfygmx6hgmhhw" path="res://graphics/projectiles/blue.png" id="2_ydyfe"]
+[ext_resource type="Texture2D" uid="uid://ku2yskkx8hbg" path="res://graphics/projectiles/grenade.png" id="3_v4tir"]
 
 [node name="Player" type="Node2D"]
 
-[node name="Player" type="Sprite2D" parent="."]
-texture = ExtResource("1_3qqxn")
+[node name="PlayerImage" type="Sprite2D" parent="."]
+texture = ExtResource("1_hxnwr")
 
-[node name="Laser" type="Sprite2D" parent="Player"]
+[node name="LaserImage" type="Sprite2D" parent="PlayerImage"]
+position = Vector2(20, -225)
+texture = ExtResource("2_ydyfe")
+
+[node name="GrenadeImage" type="Sprite2D" parent="."]
+position = Vector2(-109, -135)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_v4tir")
