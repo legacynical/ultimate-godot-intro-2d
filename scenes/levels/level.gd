@@ -9,7 +9,6 @@ func _ready():
 	for i in test_array:
 		print(i)
 	
-	print(test_array[0])
 	
 func _process(delta):
 	$Logo.rotation_degrees += 100 * delta
@@ -21,3 +20,6 @@ func _process(delta):
 	if $Logo.position.x > 1000:
 		$Logo.pos.x = 0
 	#print(Input.is_action_pressed("left"))
+
+func test_function():
+	print("This is a test function")
