@@ -10,8 +10,6 @@ func _ready():
 		print(i)
 	
 	print(test_array[0])
-	print($Sprite2D/Sprite2D2/Sprite2D3/Target)
-	print(%Target)
 	
 func _process(delta):
 	$Logo.rotation_degrees += 100 * delta
