@@ -21,3 +21,5 @@ func _process(delta):
 	
 	if $Logo.position.x > 1000:
 		$Logo.pos.x = 0
+		
+	#print(Input.is_action_pressed("left"))
