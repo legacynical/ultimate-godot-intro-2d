@@ -1,8 +1,13 @@
 extends Node2D
 
+var test_array: Array[String] = ["Test", "fizz", "buzz"]
+
 func _ready():
 	#get_node("Logo").rotation_degree = 90
 	$Logo.rotation_degrees = 90 # same as above
+	
+	for i in test_array:
+		print(i)
 	
 func _process(delta):
 	$Logo.rotation_degrees += 1
