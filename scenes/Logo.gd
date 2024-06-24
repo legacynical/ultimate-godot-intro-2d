@@ -14,6 +14,8 @@ func _ready():
 
 	test_scale = 2
 	scale = Vector2(test_scale, test_scale)
+
+	print(%Target.position)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
