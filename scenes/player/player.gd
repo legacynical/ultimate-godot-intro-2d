@@ -14,4 +14,4 @@ func _process(delta):
 		print("shoot laser")
 	
 	if Input.is_action_pressed("secondary action"):
-		print("secondary action")
+		print("shoot grenade")
