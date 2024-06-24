@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterBody2D
 
 var speed = 500
 
@@ -7,8 +7,10 @@ func _process(delta):
 	# input
 	var direction = Input.get_vector("left", "right", "up", "down")
 	#print(direction)
-	position += direction * speed * delta
-
+	#position += direction * speed * delta (not used for CharacterBody2D)
+	velocity = direction * speed
+	move_and_slide()
+	
 	# laser shooting input
 	if Input.is_action_pressed("primary action"):
 		print("shoot laser")
