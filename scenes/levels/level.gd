@@ -9,8 +9,11 @@ func _ready():
 	for i in test_array:
 		print(i)
 	
+	print(test_array[0])
+	
+	
 func _process(delta):
-	$Logo.rotation_degrees += 1
+	$Logo.rotation_degrees += 100 * delta
 	
 	# flow -> if rotation > 100 -> 0
 	if $Logo.rotation_degrees > 180:
