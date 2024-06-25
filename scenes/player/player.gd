@@ -26,6 +26,8 @@ func _process(_delta):
 
 func _on_laser_timer_timeout():
 	can_laser = true
-
+	$LaserTimer.start()
+	
 func _on_grenade_timer_timeout():
 	can_grenade = true
+	$GrenadeTimer.start()
