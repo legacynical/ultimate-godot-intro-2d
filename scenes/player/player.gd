@@ -24,14 +24,14 @@ func _process(_delta):
 		var selected_laser = laser_markers[randi() % laser_markers.size()]
 		can_laser = false
 		# emit the laser position selected
-		laser.emit(selected_laser.global_position)
 		$LaserTimer.start()
+		laser.emit(selected_laser.global_position)
 	
 	if Input.is_action_pressed("secondary action") and can_grenade:
-		
 		can_grenade = false
-		grenade.emit($GrenadeStartPosition.global_position)
 		$GrenadeTimer.start()
+		var pos = $LaserStartPositions.get_children()[0].global_position
+		grenade.emit(pos)
 
 
 func _on_laser_timer_timeout():
