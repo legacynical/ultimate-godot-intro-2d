@@ -7,9 +7,13 @@ func _on_gate_player_entered_gate(body):
 	print(body)
 
 
-func _on_player_laser():
+func _on_player_laser(pos):
 	var laser = laser_scene.instantiate()
-	add_child(laser)
+	laser.position = pos
+	# 1. update the laser position
+	# 2, move the laser
+	# 3. add laser instance to a Node2D
+	$Projectiles.add_child(laser)
 	print("laser from level")
 
 
