@@ -17,6 +17,9 @@ func _process(_delta):
 	velocity = direction * speed
 	move_and_slide() # includes delta
 	
+	# rotate
+	look_at(get_global_mouse_position())
+	
 	# laser shooting input
 	if Input.is_action_pressed("primary action") and can_laser:
 		# randomly select a marker 2D for the laser start position

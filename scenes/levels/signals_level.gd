@@ -19,7 +19,8 @@ func _on_player_laser(pos):
 
 
 func _on_player_grenade(pos):
-	var grenade = grenade_scene.instantiate()
+	var grenade = grenade_scene.instantiate() as RigidBody2D
 	grenade.position = pos
+	grenade.linear_velocity = Vector2.UP * 100
 	$Projectiles.add_child(grenade)
 	print("grenade from level")
