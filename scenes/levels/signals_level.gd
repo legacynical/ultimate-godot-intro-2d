@@ -9,8 +9,13 @@ func _on_gate_player_entered_gate(body):
 
 
 func _on_player_laser(pos, direction):
-	var laser = laser_scene.instantiate()
+	var laser = laser_scene.instantiate() as Area2D
 	laser.position = pos
+	laser.rotation_degrees = rad_to_deg(direction.angle()) + 90
+		# angle method converts vector to radians 
+		# alt: laser.rotation = direction.angle()
+	laser.direction = direction
+	
 	# 1. update the laser position
 	# 2, move the laser
 	# 3. add laser instance to a Node2D

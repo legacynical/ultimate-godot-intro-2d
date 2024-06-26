@@ -11,7 +11,6 @@ const speed = 500
 func _process(_delta):
 	# input
 	var direction = Input.get_vector("left", "right", "up", "down")
-	var player_direction = (get_global_mouse_position() - position).normalized()
 	#print(direction)
 	#position += direction * speed * delta (not used for CharacterBody2D)
 	velocity = direction * speed
@@ -19,6 +18,8 @@ func _process(_delta):
 	
 	# rotate
 	look_at(get_global_mouse_position())
+	
+	var player_direction = (get_global_mouse_position() - position).normalized()
 	
 	# laser shooting input
 	if Input.is_action_pressed("primary action") and can_laser:
@@ -30,6 +31,7 @@ func _process(_delta):
 		$LaserTimer.start()
 		laser.emit(selected_laser.global_position, player_direction)
 	
+	# grenade shooting input
 	if Input.is_action_pressed("secondary action") and can_grenade:
 		can_grenade = false
 		$GrenadeTimer.start()
