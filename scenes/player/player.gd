@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
 signal laser(pos)
-signal grenade(pos)
+signal grenade(pos, direction)
 
 var can_laser: bool = true
 var can_grenade: bool = true
 
-var speed = 500
+const speed = 500
 
 func _process(_delta):
 	
@@ -34,7 +34,8 @@ func _process(_delta):
 		can_grenade = false
 		$GrenadeTimer.start()
 		var pos = $LaserStartPositions.get_children()[0].global_position
-		grenade.emit(pos)
+		var player_direction = (get_global_mouse_position() - position).normalized()
+		grenade.emit(pos, player_direction)
 
 
 func _on_laser_timer_timeout():
