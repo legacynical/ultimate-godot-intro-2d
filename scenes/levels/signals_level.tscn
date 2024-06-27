@@ -14,6 +14,8 @@ script = ExtResource("1_vy785")
 [node name="Player" parent="." instance=ExtResource("2_kv3q3")]
 position = Vector2(614, 500)
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="grenade" from="Player" to="." method="_on_player_grenade"]
 [connection signal="laser" from="Player" to="." method="_on_player_laser"]
