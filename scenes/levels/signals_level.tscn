@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bcxxuy75k85uy"]
+[gd_scene load_steps=17 format=3 uid="uid://bcxxuy75k85uy"]
 
 [ext_resource type="Script" path="res://scenes/levels/signals_level.gd" id="1_vy785"]
 [ext_resource type="Texture2D" uid="uid://csi1k031lg3yi" path="res://graphics/ground/stones.png" id="2_d6y6t"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ckfary0pscdwb" path="res://graphics/decals/moss/moss_3.png" id="8_kvlh1"]
 [ext_resource type="Texture2D" uid="uid://c215wbijmuyi7" path="res://graphics/decals/moss/moss_4.png" id="9_5itrs"]
 [ext_resource type="Texture2D" uid="uid://4lve5s0qwj45" path="res://graphics/decals/moss/moss_5.png" id="10_3tbq8"]
+[ext_resource type="PackedScene" uid="uid://d4ajfu1b6l02a" path="res://scenes/houses/house.tscn" id="13_a2lnn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5iheq"]
 resource_name = "walls"
@@ -101,6 +102,10 @@ position = Vector2(1215, 1368)
 texture = ExtResource("10_3tbq8")
 
 [node name="Gate" parent="." instance=ExtResource("3_jryak")]
+
+[node name="House" parent="." instance=ExtResource("13_a2lnn")]
+position = Vector2(-2349, 4324)
+rotation = -2.0944
 
 [node name="Projectiles" type="Node2D" parent="."]
 
