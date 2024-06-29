@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://606ohcyd053q"]
+[gd_scene load_steps=8 format=3 uid="uid://606ohcyd053q"]
 
 [ext_resource type="Texture2D" uid="uid://hf5dvcma73kt" path="res://graphics/player/player.png" id="1_hxnwr"]
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_ivear"]
@@ -7,12 +7,23 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_lo0bs"]
 radius = 62.0725
 
+[sub_resource type="Gradient" id="Gradient_l0pif"]
+offsets = PackedFloat32Array(0, 0.973094)
+colors = PackedColorArray(0.419608, 0.890196, 0.992157, 0.913725, 0.662745, 0.909804, 0.992157, 0.92549)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_j5nla"]
+gradient = SubResource("Gradient_l0pif")
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u86c2"]
 particle_flag_disable_z = true
 spread = 15.0
-initial_velocity_min = 750.0
-initial_velocity_max = 1000.0
+initial_velocity_min = 1200.0
+initial_velocity_max = 1500.0
 gravity = Vector3(0, 0, 0)
+scale_min = 0.3
+scale_max = 0.8
+color = Color(0.269889, 0.591741, 0.843183, 0.780392)
+color_ramp = SubResource("GradientTexture1D_j5nla")
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 31
