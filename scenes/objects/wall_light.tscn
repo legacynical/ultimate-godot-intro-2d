@@ -1,24 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://dy406inv5om3i"]
+[gd_scene load_steps=4 format=3 uid="uid://dy406inv5om3i"]
 
 [ext_resource type="Texture2D" uid="uid://siwfllrvr8rh" path="res://graphics/objects/wall_lamp.png" id="1_ajs3p"]
 [ext_resource type="Texture2D" uid="uid://3juy7s3o5oes" path="res://graphics/lights/textures/circle.png" id="2_6hecy"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mxll3"]
-height = 76.4233
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_u4cso"]
 polygon = PackedVector2Array(-303, -72, -262, -78, 284, -77, 318, -72, 354, -58, 380, -36, 424, 18, 401, 71, 384, 78, 239, 52, 240, -11, 234, -20, -220, -19, -226, -10, -226, 49, -387, 71, -409, 17, -365, -42)
 
 [node name="WallLight" type="StaticBody2D"]
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(276, -80, 293, -75, 346, -59, 381, -24, 415, 17, 390, 73, 374, 77, 261, 80, 236, 85, 224, 79, -234, 77, -242, 86, -263, 80, -394, 75, -419, 16, -371, -46, -323, -69, -282, -78)
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(504, 159)
 texture = ExtResource("1_ajs3p")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-rotation = -1.5708
-scale = Vector2(7.94947, -11.0176)
-shape = SubResource("CapsuleShape2D_mxll3")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(-9, 0)
