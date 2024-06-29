@@ -8,6 +8,8 @@ size = Vector2(835, 207)
 
 [node name="Gate" type="StaticBody2D"]
 position = Vector2(-17, -140)
+collision_layer = 4
+collision_mask = 11
 script = ExtResource("1_3mxq0")
 
 [node name="Gate" type="Sprite2D" parent="."]
