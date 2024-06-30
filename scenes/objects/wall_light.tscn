@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://3juy7s3o5oes" path="res://graphics/lights/textures/circle.png" id="2_6hecy"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_u4cso"]
-polygon = PackedVector2Array(-303, -72, -262, -78, 284, -77, 318, -72, 354, -58, 380, -36, 424, 18, 401, 71, 384, 78, 239, 52, 240, -11, 234, -20, -220, -19, -226, -10, -226, 49, -387, 71, -409, 17, -365, -42)
+polygon = PackedVector2Array(216, -5, 222, -10, 229, -3, 229, 2, 232, 8, 234, 39, 229, 42, 216, 52)
 
 [node name="WallLight" type="StaticBody2D"]
 
@@ -28,4 +28,9 @@ texture_scale = 4.0
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 position = Vector2(-9, 0)
+occluder = SubResource("OccluderPolygon2D_u4cso")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+position = Vector2(3, 2)
+scale = Vector2(-1, 1)
 occluder = SubResource("OccluderPolygon2D_u4cso")
