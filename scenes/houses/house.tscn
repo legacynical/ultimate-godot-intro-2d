@@ -49,8 +49,8 @@ polygon = PackedVector2Array(-195, -20.6829, -21.0364, -20.6829, -20.4849, -195,
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_605di"]
 polygon = PackedVector2Array(20.6829, -195, 20.6829, -21.0364, 195, -20.4849, 195, 20.7655, -195, 21.0462, -195, -21.0462, -20.4849, -20.7655, -20.8596, -195)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_me8ox"]
-polygon = PackedVector2Array(-195, -195, 195, -195, 195, 195, -195, 195)
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_f3e5b"]
+polygon = PackedVector2Array(195, 70, -195, 70, -195, -72, 195, -70)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_h6qus"]
 polygon = PackedVector2Array(195, 70, -195, 70, -195, -72, 195, -70)
@@ -113,7 +113,7 @@ texture_region_size = Vector2i(390, 390)
 3:0/0/physics_layer_0/angular_velocity = 0.0
 3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, 12, 79.375, -50.3968, 195, -73.5391, 195, 65.5159, 102.054, 98.2738, 69.2956, 195, -70, 195, -56.6964, 90.7143)
 4:0/0 = 0
-4:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_me8ox")
+4:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_f3e5b")
 4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:0/0/physics_layer_0/angular_velocity = 0.0
 4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(195, 73.5391, 195, -65.5159, -195, -73, -195, 72)
@@ -321,6 +321,12 @@ layer_2/tile_data = PackedInt32Array(196611, 65537, 6, 131075, 65537, 6, 65539, 
 position = Vector2(2458, 387)
 rotation = 1.5708
 
+[node name="SimpleLight2" parent="." instance=ExtResource("2_xmivd")]
+position = Vector2(957, -350)
+
 [node name="WallLight" parent="." instance=ExtResource("3_ytng2")]
 position = Vector2(2401, 1178)
 rotation = -1.5708
+
+[node name="WallLight2" parent="." instance=ExtResource("3_ytng2")]
+position = Vector2(-143, 1658)
