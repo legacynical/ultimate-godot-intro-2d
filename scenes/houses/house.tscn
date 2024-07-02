@@ -302,7 +302,6 @@ sources/1 = SubResource("TileSetAtlasSource_w1mda")
 
 [node name="House" type="Area2D"]
 collision_layer = 16
-metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(586.25, 588.5)
