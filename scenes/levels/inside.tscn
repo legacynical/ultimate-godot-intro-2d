@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c38ja51jm8i3e"]
+[gd_scene load_steps=10 format=3 uid="uid://c38ja51jm8i3e"]
 
 [ext_resource type="PackedScene" uid="uid://bcxxuy75k85uy" path="res://scenes/levels/signals_level.tscn" id="1_7yg26"]
 [ext_resource type="Texture2D" uid="uid://b8gjqwn5iexs7" path="res://graphics/ground/dirt.png" id="2_i0u1j"]
@@ -7,15 +7,18 @@
 [ext_resource type="PackedScene" uid="uid://dy406inv5om3i" path="res://scenes/objects/wall_light.tscn" id="4_m7sh3"]
 [ext_resource type="PackedScene" uid="uid://coo8j1u4te3jj" path="res://scenes/objects/simple_light.tscn" id="5_dtuth"]
 [ext_resource type="Texture2D" uid="uid://bpkc0ulubrsl8" path="res://graphics/lights/overlays/infrastructure.png" id="7_arsb7"]
+[ext_resource type="Texture2D" uid="uid://cnb67hm2b3vnu" path="res://graphics/lights/overlays/hole.png" id="8_v2nm3"]
+[ext_resource type="Texture2D" uid="uid://2uo2s3dgs8bi" path="res://graphics/lights/overlays/lattice.png" id="9_43c1i"]
 
 [node name="Inside" instance=ExtResource("1_7yg26")]
 
-[node name="Sprite2D" type="Sprite2D" parent="Ground" index="0"]
+[node name="Dirt" type="Sprite2D" parent="Ground" index="0"]
 texture_repeat = 2
 position = Vector2(562, -2488)
 texture = ExtResource("2_i0u1j")
 region_enabled = true
 region_rect = Rect2(517.014, 446.686, 15000, 10000)
+metadata/_edit_lock_ = true
 
 [node name="TileMap" type="TileMap" parent="Ground" index="1"]
 tile_set = ExtResource("2_wc0wt")
@@ -118,8 +121,28 @@ metadata/_edit_lock_ = true
 [node name="Overlays" type="Node2D" parent="Lights" index="19"]
 
 [node name="Infrastructure" type="Sprite2D" parent="Lights/Overlays" index="0"]
-modulate = Color(1, 1, 1, 0.0862745)
+modulate = Color(0.751053, 0.51227, 0.719722, 0.0862745)
 position = Vector2(579, -390)
 rotation = 1.5708
 scale = Vector2(7.33822, 6.83436)
 texture = ExtResource("7_arsb7")
+
+[node name="Hole" type="Sprite2D" parent="Lights/Overlays" index="1"]
+modulate = Color(0.75439, 0.45862, 0.509427, 0.0627451)
+position = Vector2(582, -3897)
+scale = Vector2(7.78548, 7.78548)
+texture = ExtResource("8_v2nm3")
+
+[node name="Lattice" type="Sprite2D" parent="Lights/Overlays" index="2"]
+modulate = Color(0.722936, 0.46676, 0.544855, 0.113725)
+position = Vector2(-2667, -3303)
+rotation = 1.57079
+scale = Vector2(10.4156, 10.4156)
+texture = ExtResource("9_43c1i")
+
+[node name="Lattice2" type="Sprite2D" parent="Lights/Overlays" index="3"]
+modulate = Color(0.722936, 0.46676, 0.544855, 0.113725)
+position = Vector2(3918, -3348)
+rotation = 1.57079
+scale = Vector2(10.4156, 10.4156)
+texture = ExtResource("9_43c1i")
