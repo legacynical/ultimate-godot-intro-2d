@@ -14,3 +14,7 @@ func _on_body_entered(body):
 	#if "is_enemy" in body:
 		#print("is enemy")
 	queue_free()
+
+
+func _on_laser_expire_timeout():
+	queue_free()
