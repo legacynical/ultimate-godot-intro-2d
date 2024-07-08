@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+#var is_enemy: bool = true
 var speed = 300
 
 # Called when the node enters the scene tree for the first time.
@@ -17,3 +18,6 @@ func _process(delta):
 	
 	# move and slide
 	move_and_slide()
+
+func hit():
+	print("drone hit")
