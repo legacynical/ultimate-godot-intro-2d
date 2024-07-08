@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends ItemContainer
 
 func hit():
 	print("toilet")

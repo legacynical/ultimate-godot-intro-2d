@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cu5m7a4ieb30j"]
 
-[ext_resource type="Texture2D" uid="uid://tt8beimcs2bx" path="res://graphics/objects/box/base.png" id="1_m7434"]
-[ext_resource type="Texture2D" uid="uid://cdnioke8hl3w" path="res://graphics/objects/box/lid.png" id="2_jtjff"]
+[ext_resource type="Texture2D" uid="uid://tt8beimcs2bx" path="res://graphics/objects/box/base.png" id="1_ywl0k"]
+[ext_resource type="Texture2D" uid="uid://cdnioke8hl3w" path="res://graphics/objects/box/lid.png" id="2_vvog2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1jlja"]
 size = Vector2(402, 178)
@@ -11,10 +11,10 @@ collision_layer = 4
 collision_mask = 11
 
 [node name="BoxBase" type="Sprite2D" parent="."]
-texture = ExtResource("1_m7434")
+texture = ExtResource("1_ywl0k")
 
 [node name="BoxLid" type="Sprite2D" parent="."]
-texture = ExtResource("2_jtjff")
+texture = ExtResource("2_vvog2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_1jlja")

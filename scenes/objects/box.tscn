@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6qtqmmvtfmap"]
+[gd_scene load_steps=5 format=3 uid="uid://b6qtqmmvtfmap"]
 
-[ext_resource type="PackedScene" uid="uid://0a67w4idlxax" path="res://scenes/objects/item_container.tscn" id="1_2tnvx"]
+[ext_resource type="PackedScene" uid="uid://0a67w4idlxax" path="res://scenes/container/item_container.tscn" id="1_2tnvx"]
 [ext_resource type="Texture2D" uid="uid://4kbudyr76q0g" path="res://graphics/objects/Box.png" id="2_avjnq"]
+[ext_resource type="Script" path="res://scenes/objects/box.gd" id="2_bqo50"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o4qap"]
 size = Vector2(352, 258)
 
 [node name="Box" instance=ExtResource("1_2tnvx")]
+script = ExtResource("2_bqo50")
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(0, -1)
