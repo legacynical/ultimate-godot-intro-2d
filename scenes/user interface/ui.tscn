@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://t6waxr2u3r72"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = -1
+anchor_right = 0.25
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(11.4818, 4.66065)
+color = Color(0.407423, 0.738096, 0.927264, 1)
