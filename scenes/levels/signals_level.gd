@@ -34,7 +34,9 @@ func _on_player_grenade(pos, direction):
 
 func _on_house_player_entered():
 	var tween = get_tree().create_tween()
-	tween.tween_property($Player/Camera2D, "zoom", Vector2(1, 1), 1)
+	tween.set_parallel(true)
+	#tween.tween_property($Player, "modulate:a", 0, 2).from(0.5)
+	tween.tween_property($Player/Camera2D, "zoom", Vector2(1, 1), 1).set_trans(Tween.TRANS_QUAD)
 
 
 func _on_house_player_exited():
