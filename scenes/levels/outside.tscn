@@ -55,7 +55,7 @@ script = ExtResource("2_h55et")
 
 [node name="Soil" type="Sprite2D" parent="Ground" index="0"]
 texture_repeat = 2
-position = Vector2(773, 273)
+position = Vector2(665, 1834)
 texture = ExtResource("2_0ynvu")
 region_enabled = true
 region_rect = Rect2(0, 0, 20000, 10000)
@@ -111,10 +111,12 @@ position = Vector2(-109, 452)
 [node name="LightFanAnimation" parent="Ground" index="12" instance=ExtResource("13_i11pu")]
 position = Vector2(-2891, 1926)
 scale = Vector2(2, 2)
-autoplay = "default"
 frame_progress = 0.113138
 
 [node name="Gate" parent="." index="1" instance=ExtResource("2_er8i7")]
 position = Vector2(2, -299)
+
+[node name="Player" parent="." index="3"]
+position = Vector2(614, 250)
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
