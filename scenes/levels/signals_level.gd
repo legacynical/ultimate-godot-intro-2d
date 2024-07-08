@@ -30,3 +30,8 @@ func _on_player_grenade(pos, direction):
 	$Projectiles.add_child(grenade)
 	print(direction)
 	print(grenade.speed)
+
+
+func _on_house_player_entered():
+	var tween = get_tree().create_tween()
+	tween.tween_property($Player/Camera2D, "zoom", Vector2(1, 1), 1)
