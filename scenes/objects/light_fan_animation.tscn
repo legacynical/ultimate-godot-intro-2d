@@ -204,9 +204,10 @@ animations = [{
 
 [node name="LightFanAnimation" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_wrb5j")
+autoplay = "default"
 frame_progress = 0.456772
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 energy = 1.27
 texture = ExtResource("49_3im83")
-texture_scale = 1.25
+texture_scale = 2.0
