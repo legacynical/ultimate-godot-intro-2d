@@ -1,14 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://c38ja51jm8i3e"]
+[gd_scene load_steps=8 format=3 uid="uid://c38ja51jm8i3e"]
 
 [ext_resource type="PackedScene" uid="uid://bcxxuy75k85uy" path="res://scenes/levels/signals_level.tscn" id="1_7yg26"]
+[ext_resource type="Texture2D" uid="uid://b8gjqwn5iexs7" path="res://graphics/ground/dirt.png" id="2_i0u1j"]
 [ext_resource type="TileSet" uid="uid://b6ixifxicb723" path="res://scenes/levels/house.tres" id="2_wc0wt"]
 [ext_resource type="PackedScene" uid="uid://gjvbb44dnlq5" path="res://scenes/objects/light_fan_animation.tscn" id="3_su5al"]
 [ext_resource type="PackedScene" uid="uid://dy406inv5om3i" path="res://scenes/objects/wall_light.tscn" id="4_m7sh3"]
 [ext_resource type="PackedScene" uid="uid://coo8j1u4te3jj" path="res://scenes/objects/simple_light.tscn" id="5_dtuth"]
+[ext_resource type="Texture2D" uid="uid://bpkc0ulubrsl8" path="res://graphics/lights/overlays/infrastructure.png" id="7_arsb7"]
 
 [node name="Inside" instance=ExtResource("1_7yg26")]
 
-[node name="TileMap" type="TileMap" parent="Ground" index="0"]
+[node name="Sprite2D" type="Sprite2D" parent="Ground" index="0"]
+texture_repeat = 2
+position = Vector2(562, -2488)
+texture = ExtResource("2_i0u1j")
+region_enabled = true
+region_rect = Rect2(517.014, 446.686, 15000, 10000)
+
+[node name="TileMap" type="TileMap" parent="Ground" index="1"]
 tile_set = ExtResource("2_wc0wt")
 format = 2
 layer_0/name = "Floor"
@@ -105,3 +114,12 @@ metadata/_edit_lock_ = true
 position = Vector2(1949, -1398)
 rotation = -3.14159
 metadata/_edit_lock_ = true
+
+[node name="Overlays" type="Node2D" parent="Lights" index="19"]
+
+[node name="Infrastructure" type="Sprite2D" parent="Lights/Overlays" index="0"]
+modulate = Color(1, 1, 1, 0.0862745)
+position = Vector2(579, -390)
+rotation = 1.5708
+scale = Vector2(7.33822, 6.83436)
+texture = ExtResource("7_arsb7")
