@@ -14,7 +14,7 @@ func _process(delta):
 	var direction = Vector2.RIGHT
 	
 	# velocity
-	velocity = direction * speed
+	velocity = direction * speed * delta
 	
 	# move and slide
 	move_and_slide()
