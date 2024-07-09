@@ -1,11 +1,63 @@
-[gd_scene format=3 uid="uid://t6waxr2u3r72"]
+[gd_scene load_steps=4 format=3 uid="uid://t6waxr2u3r72"]
+
+[ext_resource type="Theme" uid="uid://deo6pbwcy0yh5" path="res://scenes/user interface/main_theme.tres" id="1_2xuso"]
+[ext_resource type="Texture2D" uid="uid://bf7cekdb2qm81" path="res://graphics/ui/bullet.png" id="1_rcumf"]
+[ext_resource type="Texture2D" uid="uid://dgbxy06d07oe1" path="res://graphics/ui/grenade.png" id="3_say58"]
 
 [node name="UI" type="CanvasLayer"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = -1
-anchor_right = 0.25
+[node name="LaserCounter" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.01
+anchor_top = 0.925
+anchor_right = 0.01
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LaserCounter"]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-scale = Vector2(11.4818, 4.66065)
-color = Color(0.407423, 0.738096, 0.927264, 1)
+
+[node name="Label" type="Label" parent="LaserCounter/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_2xuso")
+text = "20"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="LaserCounter/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_rcumf")
+expand_mode = 4
+
+[node name="GrenadeCounter" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.05
+anchor_top = 0.925
+anchor_right = 0.057
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GrenadeCounter"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="GrenadeCounter/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_2xuso")
+text = "5"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="GrenadeCounter/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_say58")
+expand_mode = 4
