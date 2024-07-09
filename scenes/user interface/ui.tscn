@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://t6waxr2u3r72"]
+[gd_scene load_steps=6 format=3 uid="uid://t6waxr2u3r72"]
 
 [ext_resource type="Theme" uid="uid://deo6pbwcy0yh5" path="res://scenes/user interface/main_theme.tres" id="1_2xuso"]
 [ext_resource type="Texture2D" uid="uid://bf7cekdb2qm81" path="res://graphics/ui/bullet.png" id="1_rcumf"]
 [ext_resource type="Texture2D" uid="uid://dgbxy06d07oe1" path="res://graphics/ui/grenade.png" id="3_say58"]
+[ext_resource type="Texture2D" uid="uid://mgwg24dudxla" path="res://graphics/ui/progress_bar/bg.png" id="4_fti0r"]
+[ext_resource type="Texture2D" uid="uid://bjx14iip51om" path="res://graphics/ui/progress_bar/progress.png" id="5_sle6s"]
 
 [node name="UI" type="CanvasLayer"]
 
@@ -61,3 +63,21 @@ horizontal_alignment = 1
 layout_mode = 2
 texture = ExtResource("3_say58")
 expand_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.98
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -40.0
+offset_right = 150.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="MarginContainer"]
+layout_mode = 2
+value = 20.0
+texture_under = ExtResource("4_fti0r")
+texture_progress = ExtResource("5_sle6s")
