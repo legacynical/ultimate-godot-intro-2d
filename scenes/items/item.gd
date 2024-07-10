@@ -20,7 +20,6 @@ func _process(delta):
 # calls player add_item func when picked up via player body
 func _on_body_entered(body):
 	body.add_item(type)
-	#if type == "health":
-		#Globals.health += 10
-	print(Globals.health)
+	if type == "health":
+		Globals.health += 10
 	queue_free()
