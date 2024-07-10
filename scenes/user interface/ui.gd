@@ -28,7 +28,7 @@ func update_color(amount: int, label: Label, icon: TextureRect) -> void:
 	if amount <= 0:
 		label.modulate = red
 		icon.modulate = red
-	if amount > 0:
+	else:
 		label.modulate = green
 		icon.modulate = green
 		
