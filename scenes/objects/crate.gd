@@ -1,4 +1,4 @@
 extends ItemContainer
 
 func hit():
-	print("crate")
+	print(current_direction)
