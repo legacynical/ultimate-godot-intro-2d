@@ -42,6 +42,5 @@ func _on_house_player_exited():
 	tween.tween_property($Player/Camera2D, "zoom", Vector2(0.6, 0.6), 1)
 
 # player signal to update stats calls available UI func
-func _on_player_update_stats():
-	$UI.update_laser_text()
-	$UI.update_grenade_text()
+func _on_globals_stat_change():
+	$UI.update_stat_text()

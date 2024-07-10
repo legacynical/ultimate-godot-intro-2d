@@ -18,8 +18,12 @@ func _process(delta):
 	rotation += rotation_speed * delta
 
 # calls player add_item func when picked up via player body
-func _on_body_entered(body):
-	body.add_item(type)
+func _on_body_entered(_body):
+	#body.add_item(type)
+	if type == "laser":
+		Globals.laser_amount += 5
+	if type == "grenade":
+		Globals.grenade_amount += 1
 	if type == "health":
 		Globals.health += 10
 	queue_free()
