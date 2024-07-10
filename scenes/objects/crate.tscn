@@ -11,10 +11,10 @@ size = Vector2(404, 182)
 [node name="Crate" instance=ExtResource("1_cqqec")]
 script = ExtResource("2_0buc5")
 
-[node name="Sprite2D" parent="." index="0"]
+[node name="BaseSprite" parent="." index="0"]
 texture = ExtResource("1_jw7hc")
 
-[node name="Sprite2D2" type="Sprite2D" parent="." index="1"]
+[node name="LidSprite" parent="." index="1"]
 position = Vector2(0, 9)
 texture = ExtResource("2_6477x")
 
