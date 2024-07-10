@@ -43,16 +43,18 @@ func _process(_delta):
 		var pos = $LaserStartPositions.get_children()[0].global_position
 		grenade.emit(pos, player_direction)
 
-
 func _on_laser_timer_timeout():
 	can_laser = true
 	
 func _on_grenade_timer_timeout():
 	can_grenade = true
 
+# adds corresponding item effects and signals to update UI stats
 func add_item(type: String) -> void:
 	if type == "laser":
 		Globals.laser_amount += 5
+	if type == "grenade":
+		Globals.grenade_amount += 1
 	update_stats.emit()
 	print("player scene")
 	print(type)
