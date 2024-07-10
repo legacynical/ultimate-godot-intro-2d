@@ -35,7 +35,8 @@ func _process(_delta):
 		laser.emit(selected_laser.global_position, player_direction)
 	
 	# grenade shooting input
-	if Input.is_action_pressed("secondary action") and can_grenade:
+	if Input.is_action_pressed("secondary action") and can_grenade and Globals.grenade_amount > 0:
+		Globals.grenade_amount -= 1
 		can_grenade = false
 		$GrenadeTimer.start()
 		var pos = $LaserStartPositions.get_children()[0].global_position
