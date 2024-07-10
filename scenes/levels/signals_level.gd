@@ -4,7 +4,6 @@ class_name LevelParent
 var laser_scene: PackedScene = preload("res://scenes/projectiles/laser.tscn")
 var grenade_scene: PackedScene = preload("res://scenes/projectiles/grenade.tscn")
 
-
 func _on_player_laser(pos, direction):
 	var laser = laser_scene.instantiate() as Area2D
 	laser.position = pos
@@ -17,6 +16,7 @@ func _on_player_laser(pos, direction):
 	# 2, move the laser
 	# 3. add laser instance to a Node2D
 	$Projectiles.add_child(laser)
+	$UI.update_laser_text()
 	print("laser from level")
 
 

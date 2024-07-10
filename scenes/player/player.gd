@@ -23,7 +23,8 @@ func _process(_delta):
 	var player_direction = (get_global_mouse_position() - position).normalized()
 	
 	# laser shooting input
-	if Input.is_action_pressed("primary action") and can_laser:
+	if Input.is_action_pressed("primary action") and can_laser and Globals.laser_amount > 0:
+		Globals.laser_amount -= 1
 		$GPUParticles2D.emitting = true
 		# randomly select a marker 2D for the laser start position
 		var laser_markers = $LaserStartPositions.get_children()
