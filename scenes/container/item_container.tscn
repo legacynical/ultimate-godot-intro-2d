@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/container/item_container.gd" id="1_3oiof"]
 
-[node name="ItemContainer" type="StaticBody2D"]
+[node name="ItemContainer" type="StaticBody2D" groups=["Container"]]
 script = ExtResource("1_3oiof")
 
 [node name="BaseSprite" type="Sprite2D" parent="."]
@@ -10,3 +10,5 @@ script = ExtResource("1_3oiof")
 [node name="LidSprite" type="Sprite2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="SpawnPositions" type="Node2D" parent="."]
