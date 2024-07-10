@@ -13,6 +13,7 @@ func _on_container_opened(pos, direction):
 	#print("container opened")
 	var item = item_scene.instantiate() as Area2D
 	item.position = pos
+	item.direction = direction
 	#$Items.add_child(item)
 	$Items.call_deferred("add_child", item)
 
