@@ -13,7 +13,8 @@ func _on_container_opened(pos, direction):
 	#print("container opened")
 	var item = item_scene.instantiate() as Area2D
 	item.position = pos
-	$Items.add_child(item)
+	#$Items.add_child(item)
+	$Items.call_deferred("add_child", item)
 
 func _on_player_laser(pos, direction):
 	var laser = laser_scene.instantiate() as Area2D
