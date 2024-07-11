@@ -15,6 +15,8 @@ func hit():
 		health -= 10
 		can_take_dmg = false
 		$Timers/TakeDmgCooldown.start()
+		$Sprite2D.material.set_shader_parameter("progress", 1)
+			# sets exposed shader params from inspector
 	if health <= 0:
 		queue_free()
 

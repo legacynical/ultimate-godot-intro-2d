@@ -6,7 +6,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tewuh"]
 shader = ExtResource("2_yt44e")
-shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/color = Color(0.800269, 0.89511, 0.989987, 1)
+shader_parameter/progress = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g7q3f"]
 radius = 46.0109
