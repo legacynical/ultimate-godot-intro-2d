@@ -2,8 +2,7 @@ extends CharacterBody2D
 
 var player_nearby: bool = false
 var can_laser: bool = true
-var laser_alternator: int = 1
-var pos: Vector2
+var laser_alternator: bool = true
 
 signal laser(pos, direction)
 
@@ -11,13 +10,13 @@ func _process(_delta):
 	if player_nearby:
 		look_at(Globals.player_pos)
 		if can_laser:
-			var laser_markers = $LaserSpawnPositions.get_children()
-			if laser_alternator == 1:
-				pos = laser_markers[0].global_position
-				laser_alternator = 0
+			var pos: Vector2
+			if laser_alternator:
+				pos = $LaserSpawnPositions.get_child(0).global_position
+				laser_alternator = not laser_alternator
 			else:
-				pos = laser_markers[1].global_position
-				laser_alternator = 1
+				pos = $LaserSpawnPositions.get_child(1).global_position
+				laser_alternator = not laser_alternator
 			var direction: Vector2 = (Globals.player_pos - position).normalized()
 			laser.emit(pos, direction)
 			can_laser = false
