@@ -53,6 +53,10 @@ sources/1 = SubResource("TileSetAtlasSource_3l3uy")
 [node name="Outside" instance=ExtResource("1_qkp5q")]
 script = ExtResource("2_h55et")
 
+[node name="Gate" parent="." index="1" instance=ExtResource("2_er8i7")]
+z_index = 1
+position = Vector2(2, -299)
+
 [node name="Soil" type="Sprite2D" parent="Ground" index="0"]
 texture_repeat = 2
 position = Vector2(665, 1834)
@@ -113,12 +117,9 @@ position = Vector2(-2891, 1926)
 scale = Vector2(2, 2)
 frame_progress = 0.113138
 
-[node name="Gate" parent="." index="1" instance=ExtResource("2_er8i7")]
-position = Vector2(2, -299)
-
-[node name="Player" parent="." index="4"]
+[node name="Player" parent="." index="5"]
 position = Vector2(614, 250)
 
+[connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
 [connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]
-[connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]

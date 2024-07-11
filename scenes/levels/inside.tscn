@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c38ja51jm8i3e"]
+[gd_scene load_steps=20 format=3 uid="uid://c38ja51jm8i3e"]
 
 [ext_resource type="PackedScene" uid="uid://bcxxuy75k85uy" path="res://scenes/levels/signals_level.tscn" id="1_7yg26"]
 [ext_resource type="Script" path="res://scenes/levels/inside.gd" id="2_8j2ss"]
@@ -6,8 +6,10 @@
 [ext_resource type="TileSet" uid="uid://b6ixifxicb723" path="res://scenes/levels/house.tres" id="2_wc0wt"]
 [ext_resource type="PackedScene" uid="uid://gjvbb44dnlq5" path="res://scenes/objects/light_fan_animation.tscn" id="3_su5al"]
 [ext_resource type="Texture2D" uid="uid://82g0yyn1mwua" path="res://graphics/decals/brushes/brush054.png" id="3_tgpa0"]
+[ext_resource type="Texture2D" uid="uid://ddf71qmdh6yi8" path="res://graphics/decals/brushes/brush053.png" id="4_bcm0o"]
 [ext_resource type="PackedScene" uid="uid://dy406inv5om3i" path="res://scenes/objects/wall_light.tscn" id="4_m7sh3"]
 [ext_resource type="Texture2D" uid="uid://3juy7s3o5oes" path="res://graphics/lights/textures/circle.png" id="4_sbllp"]
+[ext_resource type="Texture2D" uid="uid://ckm4ujao88kb0" path="res://graphics/decals/brushes/brush048.png" id="5_apjgr"]
 [ext_resource type="PackedScene" uid="uid://coo8j1u4te3jj" path="res://scenes/objects/simple_light.tscn" id="5_dtuth"]
 [ext_resource type="PackedScene" uid="uid://demghmojuk65t" path="res://scenes/objects/bed.tscn" id="5_j603a"]
 [ext_resource type="PackedScene" uid="uid://cfr5p7ts7jr4q" path="res://scenes/objects/toilet.tscn" id="6_xxpww"]
@@ -24,8 +26,32 @@ size = Vector2(87.9402, 27.2623)
 script = ExtResource("2_8j2ss")
 
 [node name="Sprite2D" type="Sprite2D" parent="Decals" index="0"]
-position = Vector2(583, -984)
+modulate = Color(0.00465676, 0.0789934, 0.0832482, 0.580392)
+position = Vector2(504, -1783)
+rotation = -0.261799
+scale = Vector2(2.60316, 2.60316)
 texture = ExtResource("3_tgpa0")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Decals" index="1"]
+modulate = Color(0.00465676, 0.0789934, 0.0832482, 0.580392)
+position = Vector2(4888, -4814)
+rotation = -0.261799
+scale = Vector2(2.60316, 2.60316)
+texture = ExtResource("4_bcm0o")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Decals" index="2"]
+modulate = Color(0.00465676, 0.0789934, 0.0832482, 0.580392)
+position = Vector2(4239, -1865)
+rotation = -0.261799
+scale = Vector2(3.66453, -2.11186)
+texture = ExtResource("4_bcm0o")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Decals" index="3"]
+modulate = Color(0.00465676, 0.0789934, 0.0832482, 0.580392)
+position = Vector2(-3076, -2984)
+rotation = 1.83259
+scale = Vector2(0.949788, -0.621374)
+texture = ExtResource("5_apjgr")
 
 [node name="Dirt" type="Sprite2D" parent="Ground" index="0"]
 z_index = -2
