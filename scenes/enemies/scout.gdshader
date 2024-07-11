@@ -1,5 +1,7 @@
 shader_type canvas_item;
 
+uniform vec3 color: source_color = vec3(1);
+
 //void vertex() {
 	// Called for every vertex the material is visible on.
 //}
@@ -7,7 +9,7 @@ shader_type canvas_item;
 void fragment() {
 	// Called for every pixel the material is visible on.
 	float current_a = texture(TEXTURE, UV).a;
-	vec4 target_color = mix(texture(TEXTURE, UV), vec4(vec3(1), current_a), 0.5);
+	vec4 target_color = mix(texture(TEXTURE, UV), vec4(color, current_a), 1.0);
 		// vec3(1) == vec3(1, 1, 1)
 	COLOR = target_color;
 }
