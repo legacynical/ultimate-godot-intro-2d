@@ -47,3 +47,4 @@ func _on_laser_cooldown_timeout():
 
 func _on_take_dmg_cooldown_timeout():
 	can_take_dmg = true
+	$Sprite2D.material.set_shader_parameter("progress", 0)
