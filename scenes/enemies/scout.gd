@@ -15,10 +15,10 @@ func _process(_delta):
 			can_laser = false
 			$LaserCooldown.start()
 			
-func _on_attack_area_body_entered(body):
+func _on_attack_area_body_entered(_body):
 	player_nearby = true
 	
-func _on_attack_area_body_exited(body):
+func _on_attack_area_body_exited(_body):
 	player_nearby = false
 
 func _on_laser_cooldown_timeout():
