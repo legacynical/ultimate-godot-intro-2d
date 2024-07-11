@@ -2288,7 +2288,7 @@ shape = SubResource("RectangleShape2D_jvdyt")
 
 [node name="Node2D" type="Node2D" parent="." index="8"]
 
-[node name="Player" parent="." index="9"]
+[node name="Player" parent="." index="10"]
 position = Vector2(574, 288)
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true

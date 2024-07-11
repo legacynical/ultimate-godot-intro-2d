@@ -11,7 +11,6 @@ func _ready():
 	for scout in get_tree().get_nodes_in_group("Scouts"):
 		scout.connect("laser", _on_scout_laser)
 
-
 func _on_container_opened(pos, direction):
 	#print("container opened")
 	var item = item_scene.instantiate() as Area2D
