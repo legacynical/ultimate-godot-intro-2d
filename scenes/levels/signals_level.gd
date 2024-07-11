@@ -29,8 +29,8 @@ func _on_player_laser(pos, direction):
 	# 2, move the laser
 	# 3. add laser instance to a Node2D
 	$Projectiles.add_child(laser)
-	$UI.update_laser_text()
-	print("laser from level")
+	#$UI.update_laser_text()
+	#print("laser from level")
 
 
 func _on_player_grenade(pos, direction):
@@ -38,11 +38,11 @@ func _on_player_grenade(pos, direction):
 	grenade.position = pos
 	grenade.linear_velocity = direction * grenade.speed
 	$Projectiles.add_child(grenade)
-	$UI.update_grenade_text()
-	print(direction)
-	print(grenade.speed)
+	#$UI.update_grenade_text()
+	#print(direction)
+	#print(grenade.speed)
 
 
 # player signal to update stats calls available UI func
-func _on_globals_stat_change():
-	$UI.update_stat_text()
+#func _on_globals_stat_change():
+	#$UI.update_stat_text()
