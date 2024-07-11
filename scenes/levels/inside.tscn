@@ -26,7 +26,7 @@ size = Vector2(87.9402, 27.2623)
 script = ExtResource("2_8j2ss")
 
 [node name="Sprite2D" type="Sprite2D" parent="Decals" index="0"]
-modulate = Color(0.00465676, 0.0789934, 0.0832482, 0.580392)
+modulate = Color(0.00392157, 0.0784314, 0.0823529, 0.447059)
 position = Vector2(504, -1783)
 rotation = -0.261799
 scale = Vector2(2.60316, 2.60316)
@@ -39,16 +39,51 @@ rotation = -0.261799
 scale = Vector2(2.60316, 2.60316)
 texture = ExtResource("4_bcm0o")
 
-[node name="Sprite2D3" type="Sprite2D" parent="Decals" index="2"]
+[node name="Sprite2D6" type="Sprite2D" parent="Decals" index="2"]
+modulate = Color(0.00392157, 0.0784314, 0.0823529, 0.74902)
+position = Vector2(-2728, -3735)
+rotation = -0.261799
+scale = Vector2(4.94602, 5.47702)
+texture = ExtResource("4_bcm0o")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Decals" index="3"]
+modulate = Color(0.00392157, 0.0784314, 0.0823529, 0.74902)
+position = Vector2(-121, -4581)
+rotation = -1.57079
+scale = Vector2(3.00427, 3.53729)
+texture = ExtResource("3_tgpa0")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Decals" index="4"]
 modulate = Color(0.00465676, 0.0789934, 0.0832482, 0.580392)
 position = Vector2(4239, -1865)
 rotation = -0.261799
 scale = Vector2(3.66453, -2.11186)
 texture = ExtResource("4_bcm0o")
 
-[node name="Sprite2D4" type="Sprite2D" parent="Decals" index="3"]
+[node name="Sprite2D5" type="Sprite2D" parent="Decals" index="5"]
+modulate = Color(0.00465676, 0.0789934, 0.0832482, 0.580392)
+position = Vector2(1656, -3686)
+rotation = 2.09439
+scale = Vector2(3.66453, -2.11186)
+texture = ExtResource("4_bcm0o")
+
+[node name="Sprite2D9" type="Sprite2D" parent="Decals" index="6"]
+modulate = Color(0.00465676, 0.0789934, 0.0832482, 0.580392)
+position = Vector2(1675, -174.999)
+rotation = 3.92699
+scale = Vector2(3.66453, -2.11186)
+texture = ExtResource("4_bcm0o")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Decals" index="7"]
 modulate = Color(0.00465676, 0.0789934, 0.0832482, 0.580392)
 position = Vector2(-3076, -2984)
+rotation = 1.83259
+scale = Vector2(0.949788, -0.621374)
+texture = ExtResource("5_apjgr")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Decals" index="8"]
+modulate = Color(0.00465676, 0.0789934, 0.0832482, 0.580392)
+position = Vector2(-626.001, -549)
 rotation = 1.83259
 scale = Vector2(0.949788, -0.621374)
 texture = ExtResource("5_apjgr")
@@ -282,7 +317,6 @@ scale = Vector2(10.4156, 10.4156)
 texture = ExtResource("9_43c1i")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="4"]
-visible = false
 color = Color(0.232795, 0.193341, 0.203907, 1)
 blend_mode = 1
 metadata/_edit_lock_ = true
