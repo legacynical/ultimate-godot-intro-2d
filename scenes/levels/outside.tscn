@@ -54,10 +54,10 @@ sources/1 = SubResource("TileSetAtlasSource_3l3uy")
 script = ExtResource("2_h55et")
 
 [node name="Gate" parent="." index="1" instance=ExtResource("2_er8i7")]
-z_index = 1
 position = Vector2(2, -299)
 
 [node name="Soil" type="Sprite2D" parent="Ground" index="0"]
+z_index = -2
 texture_repeat = 2
 position = Vector2(665, 1834)
 texture = ExtResource("2_0ynvu")
@@ -70,6 +70,7 @@ position = Vector2(-312, 935)
 texture = ExtResource("3_14m6b")
 
 [node name="TileMap" type="TileMap" parent="Ground" index="2"]
+z_index = -1
 tile_set = SubResource("TileSet_bxj44")
 format = 2
 layer_0/name = "Soil"
