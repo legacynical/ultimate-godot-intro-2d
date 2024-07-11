@@ -18,12 +18,15 @@ var grenade_amount = 5:
 var player_can_take_dmg: bool = true
 var health = 70:
 	set(value):
-		if player_can_take_dmg:
+		if player_can_take_dmg and value < health:
 			health = value
 			player_can_take_dmg = false
 			player_take_dmg_cooldown()
 			stat_change.emit()
-
+		if value > health:
+			health = value
+			stat_change.emit()
+		
 func player_take_dmg_cooldown():
 	await get_tree().create_timer(0.5).timeout
 	player_can_take_dmg = true
