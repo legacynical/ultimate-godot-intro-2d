@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c38ja51jm8i3e"]
+[gd_scene load_steps=30 format=3 uid="uid://c38ja51jm8i3e"]
 
 [ext_resource type="PackedScene" uid="uid://bcxxuy75k85uy" path="res://scenes/levels/signals_level.tscn" id="1_7yg26"]
 [ext_resource type="Script" path="res://scenes/levels/inside.gd" id="2_8j2ss"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://emw5r6mapvqt" path="res://graphics/objects/infestation/small_3.png" id="18_ej0w6"]
 [ext_resource type="Texture2D" uid="uid://d2jakw18ca68g" path="res://graphics/objects/infestation/small_4.png" id="19_fslmw"]
 [ext_resource type="Texture2D" uid="uid://cx6du5rf51wdl" path="res://graphics/objects/infestation/spikes.png" id="20_5hr5x"]
+[ext_resource type="PackedScene" uid="uid://5tsco85c353i" path="res://scenes/enemies/bug.tscn" id="27_g8d5o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jvdyt"]
 size = Vector2(87.9402, 27.2623)
@@ -2287,6 +2288,10 @@ scale = Vector2(12.2811, 12.2811)
 shape = SubResource("RectangleShape2D_jvdyt")
 
 [node name="Node2D" type="Node2D" parent="." index="8"]
+
+[node name="Bug" parent="Enemies" index="0" instance=ExtResource("27_g8d5o")]
+position = Vector2(294, 167)
+rotation = 0.523598
 
 [node name="Player" parent="." index="10"]
 position = Vector2(574, 288)
