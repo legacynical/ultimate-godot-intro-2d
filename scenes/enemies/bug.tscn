@@ -144,8 +144,7 @@ height = 1770.0
 position = Vector2(108, 0)
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_1lotr")
-animation = &"attack"
-frame_progress = 0.930087
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
