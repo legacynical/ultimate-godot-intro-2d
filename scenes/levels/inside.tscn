@@ -2290,7 +2290,15 @@ shape = SubResource("RectangleShape2D_jvdyt")
 [node name="Node2D" type="Node2D" parent="." index="8"]
 
 [node name="Bug" parent="Enemies" index="0" instance=ExtResource("27_g8d5o")]
-position = Vector2(294, -912)
+position = Vector2(634, -1486)
+rotation = 0.523598
+
+[node name="Bug2" parent="Enemies" index="1" instance=ExtResource("27_g8d5o")]
+position = Vector2(1773, -1995)
+rotation = 0.523598
+
+[node name="Bug3" parent="Enemies" index="2" instance=ExtResource("27_g8d5o")]
+position = Vector2(-502, -1928)
 rotation = 0.523598
 
 [node name="Player" parent="." index="10"]

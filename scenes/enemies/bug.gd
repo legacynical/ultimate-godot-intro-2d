@@ -37,9 +37,9 @@ func _process(delta):
 		can_attack = false
 		$Timers/AttackCooldown.start()
 			
-func _on_notice_area_body_entered(body):
-	print(body)
-	print("bug noticed player")
+func _on_notice_area_body_entered(_body):
+	#print(body)
+	#print("bug noticed player")
 	player_nearby = true
 	
 func _on_notice_area_body_exited(_body):
@@ -57,8 +57,8 @@ func _on_attack_cooldown_timeout():
 func _on_take_dmg_cooldown_timeout():
 	can_take_dmg = true
 	$AnimatedSprite2D.material.set_shader_parameter("progress", 0)
-
-
+# TODO 
+# fix shader to activate on each bug instance
 
 
 
