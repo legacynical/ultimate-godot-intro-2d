@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://5tsco85c353i"]
+[gd_scene load_steps=38 format=3 uid="uid://5tsco85c353i"]
 
 [ext_resource type="Script" path="res://scenes/enemies/bug.gd" id="1_bdlha"]
 [ext_resource type="Texture2D" uid="uid://vegumn4c3idv" path="res://graphics/enemies/bug/attack/00010.png" id="1_x3exu"]
@@ -145,6 +145,12 @@ animations = [{
 radius = 536.0
 height = 1770.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_7s51r"]
+radius = 10591.4
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bx2k5"]
+radius = 1763.24
+
 [node name="Bug" type="CharacterBody2D"]
 scale = Vector2(0.1, 0.1)
 script = ExtResource("1_bdlha")
@@ -163,16 +169,20 @@ shape = SubResource("CapsuleShape2D_qw2ro")
 [node name="NoticeArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NoticeArea"]
+shape = SubResource("CircleShape2D_7s51r")
 
 [node name="AttackArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+shape = SubResource("CircleShape2D_bx2k5")
 
 [node name="Timers" type="Node" parent="."]
 
 [node name="AttackCooldown" type="Timer" parent="Timers"]
+wait_time = 0.5
 
 [node name="TakeDmgCooldown" type="Timer" parent="Timers"]
+wait_time = 0.2
 
 [connection signal="body_entered" from="NoticeArea" to="." method="_on_notice_area_body_entered"]
 [connection signal="body_exited" from="AttackArea" to="." method="_on_attack_area_body_exited"]

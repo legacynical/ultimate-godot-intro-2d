@@ -15,18 +15,25 @@ func hit():
 		health -= 10
 		can_take_dmg = false
 		$Timers/TakeDmgCooldown.start()
-		$Sprite2D.material.set_shader_parameter("progress", 1)
+		$AnimatedSprite2D.material.set_shader_parameter("progress", 1)
 			# sets exposed shader params from inspector
 	if health <= 0:
 		queue_free()
 		
-func _process(_delta):
+func _process(delta):
 	if player_nearby:
+		print("bug noticed player")
 		look_at(Globals.player_pos)
-		# 1.  move towards player
+		# move towards player
+		var direction: Vector2 = (Globals.player_pos - position).normalized()
+		position += direction * speed * delta
+		$AnimatedSprite2D.animation = "walk"	
+		
 		if can_attack:
-			var pos: Vector2 
-			var direction: Vector2 = (Globals.player_pos - position).normalized()
+			#var pos: Vector2 
+			#var direction: Vector2 = (Globals.player_pos - position).normalized()
+			print("bug attacking")
+			$AnimatedSprite2D.animation = "attack"
 			attack.emit()
 			can_attack = false
 			$Timers/AttackCooldown.start()
@@ -42,4 +49,4 @@ func _on_attack_cooldown_timeout():
 
 func _on_take_dmg_cooldown_timeout():
 	can_take_dmg = true
-	$Sprite2D.material.set_shader_parameter("progress", 0)
+	$AnimatedSprite2D.material.set_shader_parameter("progress", 0)
