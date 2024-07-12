@@ -38,7 +38,7 @@ func _process(delta):
 			can_attack = false
 			$Timers/AttackCooldown.start()
 			
-func _on_notice_area_body_entered(_body):
+func _on_notice_area_body_entered(body):
 	player_nearby = true
 	
 func _on_attack_area_body_exited(_body):
