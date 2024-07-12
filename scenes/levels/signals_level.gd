@@ -10,7 +10,9 @@ func _ready():
 		container.connect("open", _on_container_opened)
 	for scout in get_tree().get_nodes_in_group("Scouts"):
 		scout.connect("laser", _on_scout_laser)
-
+	for bug in get_tree().get_nodes_in_group("Bugs"):
+		bug.connect("attack", _on_bug_attack)
+		
 func _on_container_opened(pos, direction):
 	#print("container opened")
 	var item = item_scene.instantiate() as Area2D
@@ -46,6 +48,8 @@ func _on_player_grenade(pos, direction):
 	#print(direction)
 	#print(grenade.speed)
 
+func _on_bug_attack():
+	$Player.hit()
 	
 # player signal to update stats calls available UI func
 #func _on_globals_stat_change():

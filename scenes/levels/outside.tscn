@@ -120,7 +120,7 @@ scale = Vector2(2, 2)
 frame_progress = 0.113138
 
 [node name="Scout" parent="Enemies" index="0" instance=ExtResource("16_n8i2u")]
-position = Vector2(1269, 1768)
+position = Vector2(926, 1461)
 
 [node name="Player" parent="." index="7"]
 position = Vector2(614, 250)

@@ -22,14 +22,12 @@ func hit():
 		queue_free()
 		
 func _process(delta):
-	if player_nearby:
-		print("bug noticed player")
+	if player_nearby and not player_in_range:
 		look_at(Globals.player_pos)
 		# move towards player
 		var direction: Vector2 = (Globals.player_pos - position).normalized()
 		position += direction * speed * delta
 		$AnimatedSprite2D.animation = "walk"	
-		
 	if player_in_range and can_attack:
 		#var pos: Vector2 
 		#var direction: Vector2 = (Globals.player_pos - position).normalized()
@@ -38,9 +36,10 @@ func _process(delta):
 		attack.emit()
 		can_attack = false
 		$Timers/AttackCooldown.start()
-		
+			
 func _on_notice_area_body_entered(body):
 	print(body)
+	print("bug noticed player")
 	player_nearby = true
 	
 func _on_notice_area_body_exited(_body):
