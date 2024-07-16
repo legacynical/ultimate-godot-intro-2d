@@ -23,16 +23,15 @@ func hit():
 		
 func _process(delta):
 	if player_nearby and not player_in_range:
+		#move_and_slide()
 		look_at(Globals.player_pos)
 		# move towards player
 		var direction: Vector2 = (Globals.player_pos - position).normalized()
 		position += direction * speed * delta
-		$AnimatedSprite2D.animation = "walk"	
 	if player_in_range and can_attack:
 		#var pos: Vector2 
 		#var direction: Vector2 = (Globals.player_pos - position).normalized()
 		print("bug attacking")
-		$AnimatedSprite2D.animation = "attack"
 		attack.emit()
 		can_attack = false
 		$Timers/AttackCooldown.start()
@@ -41,12 +40,14 @@ func _on_notice_area_body_entered(_body):
 	#print(body)
 	#print("bug noticed player")
 	player_nearby = true
+	$AnimatedSprite2D.animation = "walk"	
 	
 func _on_notice_area_body_exited(_body):
 	player_nearby = false
 	
 func _on_attack_area_body_entered(_body):
 	player_in_range = true
+	$AnimatedSprite2D.animation = "attack"
 	
 func _on_attack_area_body_exited(_body):
 	player_in_range = false
@@ -61,5 +62,6 @@ func _on_take_dmg_cooldown_timeout():
 # fix shader to activate on each bug instance
 
 
-
-
+func _on_animated_sprite_2d_animation_finished():
+	if player_nearby:
+		Globals.health -= 10
