@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cajbm4o45sl3p"]
+
+[ext_resource type="Script" path="res://scenes/enemies/car.gd" id="1_3dja4"]
+[ext_resource type="Texture2D" uid="uid://cvj0tqd554dm1" path="res://graphics/car/main.png" id="1_mbjsw"]
+
+[node name="Car" type="PathFollow2D"]
+script = ExtResource("1_3dja4")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+rotation = 1.5708
+texture = ExtResource("1_mbjsw")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
+polygon = PackedVector2Array(-225, -173, -158, -180, -96, -170, -85, -138, -96, -95, -54, -131, 10, -118, 6, -141, 11, -168, 68, -173, 119, -166, 126, -137, 119, -101, 130, -90, 150, -91, 151, -120, 131, -163, 148, -161, 175, -115, 173, -91, 188, -90, 184, -63, 173, -60, 175, -35, 186, -29, 186, 26, 176, 33, 176, 60, 184, 57, 188, 80, 185, 88, 172, 93, 173, 120, 147, 159, 132, 160, 152, 119, 151, 91, 125, 88, 120, 98, 117, 112, 120, 139, 113, 165, 56, 174, 6, 166, -2, 131, 3, 118, -55, 130, -106, 86, -91, 112, -90, 149, -97, 170, -161, 181, -224, 173, -234, 137, -224, 105, -205, 105, -201, 78, -229, 81, -231, 48, -275, 49, -298, 28, -297, -39, -271, -51, -231, -48, -228, -84, -197, -79, -215, -108, -228, -109, -233, -147)
