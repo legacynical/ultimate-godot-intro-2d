@@ -3,8 +3,11 @@ extends CharacterBody2D
 #var is_enemy: bool = true
 var player_nearby: bool = false
 var can_take_dmg: bool = true
+
+var max_speed: int = 600
 var speed: int = 400
 var health: int = 50
+var speed_multiplier: int = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,7 +19,7 @@ func _process(delta):
 	if player_nearby:
 		look_at(Globals.player_pos)
 		var direction = (Globals.player_pos - position).normalized()
-		velocity = direction * speed
+		velocity = direction * speed * speed_multiplier
 		var collision = move_and_collide(velocity * delta)
 			# unlike move_and_slide(), move_and_collide doesn't include * delta so you need to use it here
 		if collision:
@@ -32,9 +35,13 @@ func hit():
 	if health <= 0:
 		$AnimationPlayer.play("explosion")
 
+func stop_movement():
+	speed_multiplier = 0
+
 func _on_notice_area_body_entered(_body):
 	player_nearby = true
-
+	var tween = create_tween()
+	tween.tween_property(self, "speed", max_speed, 5)
 
 func _on_take_dmg_cooldown_timeout():
 	can_take_dmg = true
