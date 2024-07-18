@@ -110,6 +110,7 @@ texture = ExtResource("1_ht76p")
 shape = SubResource("CircleShape2D_2ofc1")
 
 [node name="NoticeArea" type="Area2D" parent="."]
+collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NoticeArea"]
 position = Vector2(-1, 0)
