@@ -3,7 +3,7 @@ extends CharacterBody2D
 #var is_enemy: bool = true
 var player_nearby: bool = false
 var can_take_dmg: bool = true
-var speed: int = 300
+var speed: int = 400
 var health: int = 50
 
 # Called when the node enters the scene tree for the first time.
@@ -12,12 +12,15 @@ func _ready():
 	$DroneImage.show()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _process(delta):
 	if player_nearby:
 		look_at(Globals.player_pos)
 		var direction = (Globals.player_pos - position).normalized()
 		velocity = direction * speed
-		move_and_slide()
+		var collision = move_and_collide(velocity * delta)
+			# unlike move_and_slide(), move_and_collide doesn't include * delta so you need to use it here
+		if collision:
+			$AnimationPlayer.play("explosion")
 	
 func hit():
 	if can_take_dmg:
