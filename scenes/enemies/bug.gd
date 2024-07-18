@@ -18,6 +18,9 @@ func hit():
 		$Timers/TakeDmgCooldown.start()
 		$AnimatedSprite2D.material.set_shader_parameter("progress", 1)
 			# sets exposed shader params from inspector
+		$Particles/HitParticles.emitting = true
+			# I have no idea why the inspecter params aren't working as expected but it's close enough to
+			# the tutorial video visually so I'm just going to move on
 	if health <= 0:
 		queue_free()
 		

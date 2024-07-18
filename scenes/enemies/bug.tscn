@@ -166,17 +166,16 @@ point_count = 2
 curve = SubResource("Curve_yq6rx")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_l3u13"]
-particle_flag_disable_z = true
+emission_shape_offset = Vector3(1, 0, 0)
 emission_shape = 1
-emission_sphere_radius = 3.33
+emission_sphere_radius = 3.28
 angle_max = 180.0
 direction = Vector3(1, 1, 0)
 spread = 180.0
-initial_velocity_min = 600.0
-initial_velocity_max = 1000.0
+initial_velocity_min = 1500.0
+initial_velocity_max = 2500.0
 gravity = Vector3(0, 0, 0)
 scale_min = 0.5
-scale_max = 0.8
 scale_curve = SubResource("CurveTexture_efv7q")
 color = Color(0.267829, 0.14737, 0.162602, 1)
 anim_offset_max = 1.0
@@ -222,7 +221,8 @@ wait_time = 0.2
 
 [node name="HitParticles" type="GPUParticles2D" parent="Particles"]
 material = SubResource("CanvasItemMaterial_4f2lo")
-amount = 50
+emitting = false
+amount = 20
 process_material = SubResource("ParticleProcessMaterial_l3u13")
 texture = ExtResource("33_bm2h0")
 lifetime = 0.5
