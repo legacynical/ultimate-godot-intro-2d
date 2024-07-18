@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0e01j5nojug6"]
+[gd_scene load_steps=5 format=3 uid="uid://c0e01j5nojug6"]
 
 [ext_resource type="Texture2D" uid="uid://67o750t1q7yr" path="res://graphics/enemies/drone.png" id="1_ht76p"]
 [ext_resource type="Script" path="res://scenes/enemies/drone.gd" id="1_yeupe"]
@@ -6,13 +6,25 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_2ofc1"]
 radius = 73.0069
 
-[node name="Drone" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_x74ko"]
+radius = 1077.17
+
+[node name="Drone" type="CharacterBody2D" groups=["Entity"]]
 collision_layer = 2
 collision_mask = 15
 script = ExtResource("1_yeupe")
 
 [node name="DroneImage" type="Sprite2D" parent="."]
+rotation = 1.5708
 texture = ExtResource("1_ht76p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_2ofc1")
+
+[node name="NoticeArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NoticeArea"]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_x74ko")
+
+[connection signal="body_entered" from="NoticeArea" to="." method="_on_notice_area_body_entered"]

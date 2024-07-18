@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b0ptnog5msve6"]
+[gd_scene load_steps=22 format=3 uid="uid://b0ptnog5msve6"]
 
 [ext_resource type="PackedScene" uid="uid://bcxxuy75k85uy" path="res://scenes/levels/signals_level.tscn" id="1_qkp5q"]
 [ext_resource type="Texture2D" uid="uid://csi1k031lg3yi" path="res://graphics/ground/stones.png" id="2_0ynvu"]
@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://bhtnnbomxv8ky" path="res://scenes/objects/steam_vent.tscn" id="12_f4j40"]
 [ext_resource type="PackedScene" uid="uid://gjvbb44dnlq5" path="res://scenes/objects/light_fan_animation.tscn" id="13_i11pu"]
 [ext_resource type="PackedScene" uid="uid://pr11ufx6kha1" path="res://scenes/enemies/scout.tscn" id="16_n8i2u"]
+[ext_resource type="PackedScene" uid="uid://c0e01j5nojug6" path="res://scenes/enemies/drone.tscn" id="17_n06ce"]
+[ext_resource type="PackedScene" uid="uid://5tsco85c353i" path="res://scenes/enemies/bug.tscn" id="18_a7t50"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5iheq"]
 resource_name = "walls"
@@ -121,6 +123,12 @@ frame_progress = 0.113138
 
 [node name="Scout" parent="Enemies" index="0" instance=ExtResource("16_n8i2u")]
 position = Vector2(926, 1461)
+
+[node name="Drone" parent="Enemies" index="1" instance=ExtResource("17_n06ce")]
+position = Vector2(-666, 706)
+
+[node name="Bug" parent="Enemies" index="2" instance=ExtResource("18_a7t50")]
+position = Vector2(1896, 820)
 
 [node name="Player" parent="." index="7"]
 position = Vector2(614, 250)
