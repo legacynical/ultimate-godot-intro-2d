@@ -27,4 +27,10 @@ shape = SubResource("CircleShape2D_2ofc1")
 position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_x74ko")
 
+[node name="Timers" type="Node" parent="."]
+
+[node name="TakeDmgCooldown" type="Timer" parent="Timers"]
+wait_time = 0.2
+
 [connection signal="body_entered" from="NoticeArea" to="." method="_on_notice_area_body_entered"]
+[connection signal="timeout" from="Timers/TakeDmgCooldown" to="." method="_on_take_dmg_cooldown_timeout"]
