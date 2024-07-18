@@ -18,8 +18,6 @@ func _process(_delta):
 		var direction = (Globals.player_pos - position).normalized()
 		velocity = direction * speed
 		move_and_slide()
-	if health <= 0:
-		$AnimationPlayer.play("explosion")
 	
 func hit():
 	if can_take_dmg:
@@ -27,6 +25,8 @@ func hit():
 		print(health)
 		can_take_dmg = false
 		$Timers/TakeDmgCooldown.start()
+	if health <= 0:
+		$AnimationPlayer.play("explosion")
 
 func _on_notice_area_body_entered(_body):
 	player_nearby = true
