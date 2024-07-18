@@ -28,6 +28,7 @@ func hit():
 		print(health)
 		can_take_dmg = false
 		$Timers/TakeDmgCooldown.start()
+		$DroneImage.material.set_shader_parameter("progress", 1)
 	if health <= 0:
 		$AnimationPlayer.play("explosion")
 
@@ -37,3 +38,4 @@ func _on_notice_area_body_entered(_body):
 
 func _on_take_dmg_cooldown_timeout():
 	can_take_dmg = true
+	$DroneImage.material.set_shader_parameter("progress", 0)

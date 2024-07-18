@@ -1,8 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://c0e01j5nojug6"]
+[gd_scene load_steps=11 format=3 uid="uid://c0e01j5nojug6"]
 
 [ext_resource type="Texture2D" uid="uid://67o750t1q7yr" path="res://graphics/enemies/drone.png" id="1_ht76p"]
 [ext_resource type="Script" path="res://scenes/enemies/drone.gd" id="1_yeupe"]
+[ext_resource type="Shader" path="res://scenes/enemies/drone.gdshader" id="2_nsted"]
 [ext_resource type="Texture2D" uid="uid://c2r23xn2n1t72" path="res://graphics/explosions/explosion_3.png" id="3_ad83e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2gy3n"]
+shader = ExtResource("2_nsted")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2ofc1"]
 radius = 73.0069
@@ -92,7 +98,7 @@ collision_mask = 15
 script = ExtResource("1_yeupe")
 
 [node name="DroneImage" type="Sprite2D" parent="."]
-visible = false
+material = SubResource("ShaderMaterial_2gy3n")
 rotation = 1.5708
 texture = ExtResource("1_ht76p")
 
@@ -111,6 +117,7 @@ shape = SubResource("CircleShape2D_x74ko")
 wait_time = 0.2
 
 [node name="Explosion" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("3_ad83e")
 hframes = 8
 vframes = 8
