@@ -1,4 +1,4 @@
 extends PathFollow2D
 
 func _process(delta):
-	pass
+	progress_ratio += 0.05 * delta
