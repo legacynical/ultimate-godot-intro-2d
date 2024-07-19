@@ -22,7 +22,7 @@ func _ready():
 	line2.add_point($Turret/RayCast2D2.target_position)
 
 func _process(delta):
-	progress_ratio += 0.0005 * delta
+	progress_ratio += 0.02 * delta
 	if player_nearby:
 		$Turret.look_at(Globals.player_pos)
 
