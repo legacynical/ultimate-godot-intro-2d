@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b0ptnog5msve6"]
+[gd_scene load_steps=31 format=3 uid="uid://b0ptnog5msve6"]
 
 [ext_resource type="PackedScene" uid="uid://bcxxuy75k85uy" path="res://scenes/levels/signals_level.tscn" id="1_qkp5q"]
 [ext_resource type="Texture2D" uid="uid://csi1k031lg3yi" path="res://graphics/ground/stones.png" id="2_0ynvu"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://c0e01j5nojug6" path="res://scenes/enemies/drone.tscn" id="17_n06ce"]
 [ext_resource type="PackedScene" uid="uid://5tsco85c353i" path="res://scenes/enemies/bug.tscn" id="18_a7t50"]
 [ext_resource type="PackedScene" uid="uid://cajbm4o45sl3p" path="res://scenes/enemies/car.tscn" id="19_fvnko"]
+[ext_resource type="PackedScene" uid="uid://ccwncjmfrm2us" path="res://scenes/enemies/hunter.tscn" id="21_e63ar"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5iheq"]
 resource_name = "walls"
@@ -195,6 +196,21 @@ rotation = -1.57079
 position = Vector2(3506, 3908)
 rotation = -1.57079
 
+[node name="SteamVent2" parent="Ground" index="26" instance=ExtResource("12_f4j40")]
+position = Vector2(3538, 3116)
+
+[node name="SteamVent3" parent="Ground" index="27" instance=ExtResource("12_f4j40")]
+position = Vector2(4283, 2344)
+
+[node name="SteamVent4" parent="Ground" index="28" instance=ExtResource("12_f4j40")]
+position = Vector2(2334, 5065)
+
+[node name="SteamVent5" parent="Ground" index="29" instance=ExtResource("12_f4j40")]
+position = Vector2(5082, 4679)
+
+[node name="SteamVent6" parent="Ground" index="30" instance=ExtResource("12_f4j40")]
+position = Vector2(4247, 3476)
+
 [node name="Enemies" parent="." index="6"]
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
@@ -207,6 +223,9 @@ position = Vector2(3061, 966)
 
 [node name="Bug" parent="Enemies" index="2" instance=ExtResource("18_a7t50")]
 position = Vector2(1896, 820)
+
+[node name="Hunter" parent="Enemies" index="3" instance=ExtResource("21_e63ar")]
+position = Vector2(212, 521)
 
 [node name="Player" parent="." index="7"]
 position = Vector2(614, 250)
