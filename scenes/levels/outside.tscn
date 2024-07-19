@@ -133,10 +133,10 @@ scale = Vector2(2, 2)
 frame_progress = 0.113138
 
 [node name="Scout" parent="Enemies" index="0" instance=ExtResource("16_n8i2u")]
-position = Vector2(926, 1461)
+position = Vector2(2309, 1865)
 
 [node name="Drone" parent="Enemies" index="1" instance=ExtResource("17_n06ce")]
-position = Vector2(-666, 706)
+position = Vector2(3061, 966)
 
 [node name="Bug" parent="Enemies" index="2" instance=ExtResource("18_a7t50")]
 position = Vector2(1896, 820)
