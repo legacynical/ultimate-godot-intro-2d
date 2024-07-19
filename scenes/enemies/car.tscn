@@ -14,6 +14,8 @@ script = ExtResource("1_3dja4")
 position = Vector2(58, 0)
 collision_layer = 2
 collision_mask = 11
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
 polygon = PackedVector2Array(-225, -173, -158, -180, -96, -170, -85, -138, -96, -95, -54, -131, 10, -118, 6, -141, 11, -168, 68, -173, 119, -166, 126, -137, 119, -101, 130, -90, 150, -91, 151, -120, 131, -163, 148, -161, 175, -115, 173, -91, 188, -90, 184, -63, 173, -60, 175, -35, 186, -29, 186, 26, 176, 33, 176, 60, 184, 57, 188, 80, 185, 88, 172, 93, 173, 120, 147, 159, 132, 160, 152, 119, 151, 91, 125, 88, 120, 98, 117, 112, 120, 139, 113, 165, 56, 174, 6, 166, -2, 131, 3, 118, -55, 130, -106, 86, -91, 112, -90, 149, -97, 170, -161, 181, -224, 173, -234, 137, -224, 105, -205, 105, -201, 78, -229, 81, -231, 48, -275, 49, -298, 28, -297, -39, -271, -51, -231, -48, -228, -84, -197, -79, -215, -108, -228, -109, -233, -147)
@@ -22,17 +24,38 @@ polygon = PackedVector2Array(-225, -173, -158, -180, -96, -170, -85, -138, -96, 
 rotation = 1.5708
 texture = ExtResource("1_mbjsw")
 
+[node name="NoticeArea" type="Area2D" parent="."]
+collision_layer = 16
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NoticeArea"]
+shape = SubResource("CircleShape2D_palwd")
+
 [node name="Turret" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Turret"]
 rotation = 1.5708
 texture = ExtResource("3_gvxnv")
+metadata/_edit_lock_ = true
 
-[node name="NoticeArea" type="Area2D" parent="."]
-collision_layer = 16
+[node name="RayCast2D" type="RayCast2D" parent="Turret"]
+position = Vector2(113, -26)
+target_position = Vector2(520, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NoticeArea"]
-shape = SubResource("CircleShape2D_palwd")
+[node name="Line2D" type="Line2D" parent="Turret/RayCast2D"]
+points = PackedVector2Array(0, 0, 520, 0)
+width = 1.0
+default_color = Color(0.682353, 0.156863, 0.486275, 0.65098)
+
+[node name="RayCast2D2" type="RayCast2D" parent="Turret"]
+position = Vector2(113, 29)
+target_position = Vector2(520, 0)
+
+[node name="Line2D" type="Line2D" parent="Turret/RayCast2D2"]
+points = PackedVector2Array(0, 0, 520, 0)
+width = 1.0
+default_color = Color(0.682353, 0.156863, 0.486275, 0.65098)
 
 [connection signal="body_entered" from="NoticeArea" to="." method="_on_notice_area_body_entered"]
 [connection signal="body_exited" from="NoticeArea" to="." method="_on_notice_area_body_exited"]
