@@ -180,7 +180,7 @@ _data = {
 "walk": SubResource("Animation_e6k6t")
 }
 
-[node name="Hunter" type="CharacterBody2D"]
+[node name="Hunter" type="CharacterBody2D" groups=["Entity"]]
 position = Vector2(-32, 0)
 collision_layer = 2
 collision_mask = 15
@@ -210,7 +210,7 @@ shape = SubResource("CircleShape2D_dv0ik")
 
 [node name="Timers" type="Node" parent="."]
 
-[node name="AttackCooldown" type="Timer" parent="Timers" groups=["Entity"]]
+[node name="AttackCooldown" type="Timer" parent="Timers"]
 
 [node name="TakeDmgCooldown" type="Timer" parent="Timers"]
 wait_time = 0.2
