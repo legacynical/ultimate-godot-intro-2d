@@ -3,6 +3,8 @@ extends Node
 # emit signals for UI to connect to
 signal stat_change
 
+var player_hit_sound: AudioStreamPlayer2D
+
 var laser_amount = 20:
 	get: # triggered by reading
 		return laser_amount
@@ -25,6 +27,7 @@ var health = 70:
 				health = value
 				player_can_take_dmg = false
 				player_take_dmg_cooldown()
+				player_hit_sound.play()
 		stat_change.emit()
 			
 func player_take_dmg_cooldown():
@@ -32,3 +35,8 @@ func player_take_dmg_cooldown():
 	player_can_take_dmg = true
 	
 var player_pos: Vector2
+
+func _ready():
+	player_hit_sound = AudioStreamPlayer2D.new()
+	player_hit_sound.stream = load("res://audio/solid_impact.ogg")
+	add_child(player_hit_sound)

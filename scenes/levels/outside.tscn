@@ -241,9 +241,11 @@ position = Vector2(5046, 3516)
 
 [node name="Toilet2" parent="Ground" index="22" instance=ExtResource("17_c04du")]
 position = Vector2(3486, 4666)
+rotation = -1.57079
 
 [node name="Toilet3" parent="Ground" index="23" instance=ExtResource("17_c04du")]
 position = Vector2(4311, 4671)
+rotation = 1.57079
 
 [node name="Toilet4" parent="Ground" index="24" instance=ExtResource("17_c04du")]
 position = Vector2(2311, 3895)
@@ -270,7 +272,6 @@ position = Vector2(4247, 3476)
 
 [node name="Enemies" parent="." index="6"]
 metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
 
 [node name="Scout" parent="Enemies" index="0" instance=ExtResource("16_n8i2u")]
 position = Vector2(-1235, 2729)
@@ -330,6 +331,7 @@ position = Vector2(5372.95, 1423.01)
 shape = SubResource("RectangleShape2D_gkim4")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="11"]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_lfbpl")
 metadata/_edit_lock_ = true
 

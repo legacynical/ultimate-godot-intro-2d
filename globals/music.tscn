@@ -8,4 +8,3 @@
 stream = ExtResource("1_bcfi0")
 volume_db = -14.469
 autoplay = true
-stream_paused = true
