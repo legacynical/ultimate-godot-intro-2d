@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://ccwncjmfrm2us"]
+[gd_scene load_steps=12 format=3 uid="uid://ccwncjmfrm2us"]
 
 [ext_resource type="Script" path="res://scenes/enemies/hunter.gd" id="1_6lohh"]
 [ext_resource type="Texture2D" uid="uid://x7h5eixjn478" path="res://graphics/enemies/hunter/parts/torso.png" id="2_r52kk"]
 [ext_resource type="Texture2D" uid="uid://dcw6jc574hhh8" path="res://graphics/enemies/hunter/parts/leg_front_inner.png" id="3_lor6y"]
 [ext_resource type="Texture2D" uid="uid://cpmax8vjo7fx1" path="res://graphics/enemies/hunter/parts/leg_front_outer.png" id="4_5y75t"]
+[ext_resource type="Texture2D" uid="uid://dxd174vebfsuk" path="res://graphics/enemies/hunter/parts/head.png" id="5_hatrv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bi4p3"]
 radius = 32.0
@@ -34,11 +35,12 @@ joint_two_bone2d_node = NodePath("Torso/FrontLeftLeg/FrontLeftClaw")
 
 [sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_fv1x1"]
 enabled = true
-modification_count = 2
+modification_count = 3
 modifications/0 = SubResource("SkeletonModification2DTwoBoneIK_nip5u")
 modifications/1 = SubResource("SkeletonModification2DTwoBoneIK_8apsb")
 
 [node name="Hunter" type="CharacterBody2D"]
+position = Vector2(-32, 0)
 collision_layer = 2
 collision_mask = 15
 script = ExtResource("1_6lohh")
@@ -115,6 +117,16 @@ metadata/_local_pose_override_enabled_ = true
 position = Vector2(-43, -35)
 scale = Vector2(-1, 1)
 texture = ExtResource("4_5y75t")
+
+[node name="Head" type="Bone2D" parent="Skeleton2D/Torso"]
+position = Vector2(0, -100)
+auto_calculate_length_and_angle = false
+length = 119.145
+bone_angle = -90.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Torso/Head"]
+position = Vector2(-1, -54)
+texture = ExtResource("5_hatrv")
 
 [node name="Targets" type="Node2D" parent="."]
 
