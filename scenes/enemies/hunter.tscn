@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ccwncjmfrm2us"]
+[gd_scene load_steps=19 format=3 uid="uid://ccwncjmfrm2us"]
 
 [ext_resource type="Script" path="res://scenes/enemies/hunter.gd" id="1_6lohh"]
 [ext_resource type="Texture2D" uid="uid://x7h5eixjn478" path="res://graphics/enemies/hunter/parts/torso.png" id="2_r52kk"]
@@ -60,22 +60,89 @@ modifications/1 = SubResource("SkeletonModification2DTwoBoneIK_8apsb")
 modifications/2 = SubResource("SkeletonModification2DTwoBoneIK_fj4bp")
 modifications/3 = SubResource("SkeletonModification2DTwoBoneIK_pi64r")
 
+[sub_resource type="Animation" id="Animation_e6k6t"]
+resource_name = "walk"
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Targets/FrontRight:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(177, -182), Vector2(167, -225), Vector2(175, -121), Vector2(177, -182)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Targets/FrontLeft:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.85, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-33, -171), Vector2(-45, -116), Vector2(-2, -201), Vector2(-33, -171)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Targets/BackRight:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(174, 166), Vector2(172, 109), Vector2(109, 198), Vector2(174, 166)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Targets/BackLeft:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.65, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-27, 162), Vector2(34, 194), Vector2(-77, 126), Vector2(-27, 162)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x4bgc"]
+_data = {
+"walk": SubResource("Animation_e6k6t")
+}
+
 [node name="Hunter" type="CharacterBody2D"]
 position = Vector2(-32, 0)
 collision_layer = 2
 collision_mask = 15
 script = ExtResource("1_6lohh")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(32, -66)
 shape = SubResource("CapsuleShape2D_bi4p3")
 
 [node name="NoticeArea" type="Area2D" parent="."]
+visible = false
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NoticeArea"]
+position = Vector2(31, 21)
 shape = SubResource("CircleShape2D_auun8")
 
 [node name="AttackArea" type="Area2D" parent="."]
+visible = false
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 position = Vector2(32, 0)
@@ -96,6 +163,8 @@ debug_enabled = true
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
 position = Vector2(32, 10)
 modification_stack = SubResource("SkeletonModificationStack2D_fv1x1")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="Torso" type="Bone2D" parent="Skeleton2D"]
 
@@ -210,18 +279,24 @@ scale = Vector2(-1, 1)
 texture = ExtResource("7_s48jr")
 
 [node name="Targets" type="Node2D" parent="."]
+position = Vector2(-42, 1)
 
 [node name="FrontRight" type="Marker2D" parent="Targets"]
-position = Vector2(151, -222)
+position = Vector2(176.503, -184.137)
 
 [node name="FrontLeft" type="Marker2D" parent="Targets"]
-position = Vector2(-81, -211)
+position = Vector2(-34.0437, -166.216)
 
 [node name="BackRight" type="Marker2D" parent="Targets"]
-position = Vector2(140, 202)
+position = Vector2(173.768, 159.39)
 
 [node name="BackLeft" type="Marker2D" parent="Targets"]
-position = Vector2(-78, 198)
+position = Vector2(-24.3473, 163.392)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_x4bgc")
+}
 
 [connection signal="body_entered" from="NoticeArea" to="." method="_on_notice_area_body_entered"]
 [connection signal="body_exited" from="NoticeArea" to="." method="_on_notice_area_body_exited"]
