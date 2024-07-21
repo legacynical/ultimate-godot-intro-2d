@@ -218,3 +218,4 @@ texture = ExtResource("4_ep45l")
 texture_scale = 0.03
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = -5.86
