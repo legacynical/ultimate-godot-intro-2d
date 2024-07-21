@@ -2281,6 +2281,7 @@ metadata/_edit_lock_ = true
 
 [node name="ExitGateArea" type="Area2D" parent="." index="5"]
 metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGateArea" index="0"]
 position = Vector2(583, 571.405)
@@ -2299,6 +2300,26 @@ rotation = 0.523598
 
 [node name="Bug3" parent="Enemies" index="2" instance=ExtResource("27_g8d5o")]
 position = Vector2(-502, -1928)
+rotation = 0.523598
+
+[node name="Bug4" parent="Enemies" index="3" instance=ExtResource("27_g8d5o")]
+position = Vector2(-2601, -2899)
+rotation = 0.523598
+
+[node name="Bug5" parent="Enemies" index="4" instance=ExtResource("27_g8d5o")]
+position = Vector2(621, -3571)
+rotation = 0.523598
+
+[node name="Bug6" parent="Enemies" index="5" instance=ExtResource("27_g8d5o")]
+position = Vector2(3908, -3821)
+rotation = 0.523598
+
+[node name="Bug7" parent="Enemies" index="6" instance=ExtResource("27_g8d5o")]
+position = Vector2(3804, -2277)
+rotation = 0.523598
+
+[node name="Bug8" parent="Enemies" index="7" instance=ExtResource("27_g8d5o")]
+position = Vector2(-2894, -4100)
 rotation = 0.523598
 
 [node name="Player" parent="." index="10"]
