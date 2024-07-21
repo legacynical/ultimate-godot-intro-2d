@@ -210,9 +210,10 @@ shape = SubResource("CircleShape2D_dv0ik")
 
 [node name="Timers" type="Node" parent="."]
 
-[node name="AttackCooldown" type="Timer" parent="Timers"]
+[node name="AttackCooldown" type="Timer" parent="Timers" groups=["Entity"]]
 
 [node name="TakeDmgCooldown" type="Timer" parent="Timers"]
+wait_time = 0.2
 
 [node name="NavigationTimer" type="Timer" parent="Timers"]
 autostart = true
@@ -372,4 +373,6 @@ libraries = {
 [connection signal="body_exited" from="NoticeArea" to="." method="_on_notice_area_body_exited"]
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_exited" from="AttackArea" to="." method="_on_attack_area_body_exited"]
+[connection signal="timeout" from="Timers/AttackCooldown" to="." method="_on_attack_cooldown_timeout"]
+[connection signal="timeout" from="Timers/TakeDmgCooldown" to="." method="_on_take_dmg_cooldown_timeout"]
 [connection signal="timeout" from="Timers/NavigationTimer" to="." method="_on_navigation_timer_timeout"]

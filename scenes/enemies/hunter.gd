@@ -5,6 +5,7 @@ var player_in_range: bool = false
 var can_attack: bool = true
 var can_take_dmg: bool = true
 
+var health: int = 100
 var speed: int = 200
 
 func _ready():
@@ -43,3 +44,20 @@ func attack():
 func _on_navigation_timer_timeout():
 	if player_nearby:
 		$NavigationAgent2D.target_position = Globals.player_pos
+
+
+func _on_attack_cooldown_timeout():
+	# the attack animation (w/ length of 2 seconds) that calls the attack function
+	# basically also doubles as the cooldown time
+	pass
+
+func hit():
+	if can_take_dmg:
+		health -= 10
+		can_take_dmg = false
+		$Timers/TakeDmgCooldown.start()
+	if health <= 0:
+		queue_free()
+
+func _on_take_dmg_cooldown_timeout():
+	can_take_dmg = true
