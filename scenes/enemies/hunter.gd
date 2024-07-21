@@ -56,6 +56,7 @@ func hit():
 		health -= 10
 		can_take_dmg = false
 		$Timers/TakeDmgCooldown.start()
+		$HitSound.play()
 	if health <= 0:
 		queue_free()
 

@@ -21,6 +21,7 @@ func hit():
 		$Particles/HitParticles.emitting = true
 			# I have no idea why the inspecter params aren't working as expected but it's close enough to
 			# the tutorial video visually so I'm just going to move on
+		$HitSound.play()
 	if health <= 0:
 		await get_tree().create_timer(0.5).timeout
 			# prevents node from destruction before death hit particles

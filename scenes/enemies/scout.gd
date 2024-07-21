@@ -17,6 +17,7 @@ func hit():
 		$Timers/TakeDmgCooldown.start()
 		$Sprite2D.material.set_shader_parameter("progress", 1)
 			# sets exposed shader params from inspector
+		$HitSound.play()
 	if health <= 0:
 		queue_free()
 

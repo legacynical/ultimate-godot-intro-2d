@@ -3,6 +3,7 @@ extends ItemContainer
 func hit():
 	if not opened:
 		$LidSprite.hide()
+		$AudioStreamPlayer2D.play()
 		# pick random marker from spawnPositions to set as pos
 		for i in range (5):
 			var pos = $SpawnPositions.get_child(randi()%$SpawnPositions.get_child_count()).global_position

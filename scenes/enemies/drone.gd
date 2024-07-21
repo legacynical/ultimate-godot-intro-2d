@@ -27,6 +27,8 @@ func _process(delta):
 		if collision:
 			$AnimationPlayer.play("explosion")
 			exploding = true
+			#TODO: somehow the explosion on player collsion doesn't play the sound if player keeps
+			#moving into the drone
 	if exploding:
 		var targets = get_tree().get_nodes_in_group("Container") + get_tree().get_nodes_in_group("Entity")
 		for target in targets:
@@ -41,6 +43,7 @@ func hit():
 		can_take_dmg = false
 		$Timers/TakeDmgCooldown.start()
 		$DroneImage.material.set_shader_parameter("progress", 1)
+		$Sounds/HitSound.play()
 	if health <= 0:
 		$AnimationPlayer.play("explosion")
 		exploding = true

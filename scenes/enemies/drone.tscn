@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://c0e01j5nojug6"]
+[gd_scene load_steps=13 format=3 uid="uid://c0e01j5nojug6"]
 
 [ext_resource type="Texture2D" uid="uid://67o750t1q7yr" path="res://graphics/enemies/drone.png" id="1_ht76p"]
 [ext_resource type="Script" path="res://scenes/enemies/drone.gd" id="1_yeupe"]
 [ext_resource type="Shader" path="res://scenes/enemies/drone.gdshader" id="2_nsted"]
 [ext_resource type="Texture2D" uid="uid://c2r23xn2n1t72" path="res://graphics/explosions/explosion_3.png" id="3_ad83e"]
+[ext_resource type="AudioStream" uid="uid://bjd7olu54eouy" path="res://audio/explosion.wav" id="5_3epc2"]
+[ext_resource type="AudioStream" uid="uid://x5sdh8elbw34" path="res://audio/solid_impact.ogg" id="6_lsoqf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2gy3n"]
 shader = ExtResource("2_nsted")
@@ -88,6 +90,21 @@ tracks/3/keys = {
 "method": &"queue_free"
 }]
 }
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sounds/ExplosionSound")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_3epc2")
+}],
+"times": PackedFloat32Array(0.2)
+}
+tracks/4/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rigg5"]
 _data = {
@@ -101,7 +118,6 @@ collision_mask = 15
 script = ExtResource("1_yeupe")
 
 [node name="DroneImage" type="Sprite2D" parent="."]
-visible = false
 material = SubResource("ShaderMaterial_2gy3n")
 rotation = 1.5708
 texture = ExtResource("1_ht76p")
@@ -131,6 +147,14 @@ frame = 24
 libraries = {
 "": SubResource("AnimationLibrary_rigg5")
 }
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("6_lsoqf")
+
+[node name="ExplosionSound" type="AudioStreamPlayer2D" parent="Sounds"]
+volume_db = 20.0
 
 [connection signal="body_entered" from="NoticeArea" to="." method="_on_notice_area_body_entered"]
 [connection signal="timeout" from="Timers/TakeDmgCooldown" to="." method="_on_take_dmg_cooldown_timeout"]
