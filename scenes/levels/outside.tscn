@@ -135,6 +135,10 @@ agent_radius = 0.0
 [node name="Outside" instance=ExtResource("1_qkp5q")]
 script = ExtResource("2_h55et")
 
+[node name="Decals" parent="." index="0"]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
 [node name="Gate" parent="." index="1" instance=ExtResource("2_er8i7")]
 position = Vector2(2, -299)
 metadata/_edit_lock_ = true
@@ -287,6 +291,8 @@ position = Vector2(1073, 1422)
 
 [node name="Player" parent="." index="7"]
 position = Vector2(614, 250)
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="CarPath" type="Path2D" parent="." index="9"]
 position = Vector2(53, -106)
@@ -331,7 +337,6 @@ position = Vector2(5372.95, 1423.01)
 shape = SubResource("RectangleShape2D_gkim4")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="11"]
-visible = false
 navigation_polygon = SubResource("NavigationPolygon_lfbpl")
 metadata/_edit_lock_ = true
 
